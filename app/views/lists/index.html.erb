@@ -1,14 +1,11 @@
-<h1>La liste</h1>
+<h1>Ma liste</h1>
 <ul>
   <% @lists.each do |list| %>
   <li><%= link_to list.name, list_path(list) %></li>
+  <%= cl_image_tag("bmwbldsah440707798a1dg9co5ou",
+      width: 80, height: 60, crop: :fill) %>
   <% end %>
 </ul>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-<% end %>
 
 <%= link_to "ajouter une nouvelle liste", new_list_path, class: "btn btn-primary" %>
-</div>

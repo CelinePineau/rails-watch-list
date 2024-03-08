@@ -2,7 +2,9 @@
 <ul>
   <% @lists.each do |list| %>
   <li><%= link_to list.name, list_path(list) %></li>
-  <%= cl_image_tag("https://res.cloudinary.com/djnwj7bg0/image/upload/v1709894272/nu8pjf2krwseivtajaca.jpg") %>
+  <% if @list.photos.any? %>
+   <%= cl_image_tag(list.photos.first.key) %>
+   <% end %>
   <% end %>
 </ul>
 
